@@ -518,12 +518,59 @@ g) I found this challenge a bit difficult as I had to remember previous modules 
 
 
 
+###Challanges
+This is for 3 challanges i found difficult to solve
 
 
+1) Reading Shell Scripts (Chaining Commands)
+Code:
+'''
+hacker@chaining~reading-shell-scripts:~$ file /challenge/run
+/challenge/run: setuid a /opt/pwn.college/bash script, ASCII text executable
+>hacker@chaining~reading-shell-scripts:~$ sed -n '1,200p' /challenge/run
+#!/opt/pwn.college/bash
 
+read GUESS
+if [ "$GUESS" == "hack the PLANET" ]
+then
+	echo "CORRECT! Your flag:"
+	cat /flag
+else
+	echo "Read the /challenge/run file to figure out the correct password!"
+fi
+hacker@chaining~reading-shell-scripts:~$ # show lines that mention common names
+grep -nE 'PASSWORD|PASS|SECRET|KEY|flag|pwn\.college|hardcoded|read -s|read -p' /challenge/run || true
+1:#!/opt/pwn.college/bash
+6:	echo "CORRECT! Your flag:"
+7:	cat /flag
+hacker@chaining~reading-shell-scripts:~$ grep -oP '([A-Za-z_]*PASSWORD[A-Za-z_]*|SECRET|KEY)[[:space:]]*=[[:space:]]*"\K[^"]+' /challenge/run || true
+hacker@chaining~reading-shell-scripts:~$ grep -oP "([A-Za-z_]*PASSWORD[A-Za-z_]*|SECRET|KEY)[[:space:]]*=[[:space:]]*'\K[^']+" /challenge/run || true
+hacker@chaining~reading-shell-scripts:~$ grep -oP 'pwn\.college\{[^}]+\}' /challenge/run || true
+hacker@chaining~reading-shell-scripts:~$ grep -oP '"[^"]{6,200}"' /challenge/run | sed 's/^"//; s/"$//' | head -n 10
+$GUESS
+hack the PLANET
+CORRECT! Your flag:
+Read the /challenge/run file to figure out the correct password!
+hacker@chaining~reading-shell-scripts:~$ printf 'hack the PLANET\n' | /challenge/run || printf 'hack the planet\n' | /challenge/run
+CORRECT! Your flag:
+pwn.college{w0tXUXc6AIworZQR6SIuJv2hGuk.0lMwgDOxwSNxIzNzEzW}
+'''
 
-
-
+Way:
+a) I wasn't able to understand what the challenge required
+b) I tried using some stuff used in the previous challenges in this module
+c) But that wasn't enough and wasn't giving answers
+d) Then i tried a python program of simple if else statement 
+e) But that also wasn't enough 
+f) Then i asked chatgpt to help me understand what actually is required 
+g) Then i tried using echo with other commands
+h) Then i understood what to use in echo and types the commands
+i) And then it become simple and i just had to run /challenge/run
+j) Then i got my answer
+k) It took me 2 days to finish it 
+l) I had taken help from my friends who had done it but that help wasn't good enough as they had just helped me understanding the challenge just like what i asked chatgpt
+m) After getting answer it became easier to continue the rest of the challenges
+n) The thing which made this challenge difficult for me was mixing python statements and getting confused in echo statements together
 
 
 
