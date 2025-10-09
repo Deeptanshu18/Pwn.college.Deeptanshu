@@ -8,7 +8,7 @@ After getting the flag we need submit it in the flag section, after which the ch
 
 ## My solution
 **Flag**
-'pwn.college{omcFfiMWKQqz64gW2BhqCxGKbMG.QX3YjM1wSNxIzNzEzW}'
+''' pwn.college{omcFfiMWKQqz64gW2BhqCxGKbMG.QX3YjM1wSNxIzNzEzW} '''
 
 1. I click on the challenge and click on start and choose ssh near flag input area
 2. I connected the dojo host using SSH command.
@@ -42,7 +42,7 @@ Therefore, the asked output is command+argument 'hello hackers'.
 Then the flag is printed and submitted, which completes the challenge.
 
 #My solution
-flag: pwn.college{cCb00PSBOyrit0tfuXT3MKFwXYW.QX4YjM1wSNxIzNzEzW}
+flag: ''' pwn.college{cCb00PSBOyrit0tfuXT3MKFwXYW.QX4YjM1wSNxIzNzEzW} '''
 
 1. I connected the dojonhost using ssh command
    '''bash
@@ -69,7 +69,7 @@ flag: pwn.college{cCb00PSBOyrit0tfuXT3MKFwXYW.QX4YjM1wSNxIzNzEzW}
 3. After getting our flag we need to submit it, hence, completing the challenge.
 
 #My solution
-flag: pwn.college{UhKf_685tPHwTuZfsCSV207adsj.0lNzEzNxwSNxIzEzW}
+flag: ''' pwn.college{UhKf_685tPHwTuZfsCSV207adsj.0lNzEzNxwSNxIzEzW} '''
 1. Just like the previous challenges i had connected the dojo host using ssh command.
    '''bash
    deepu18@Jarvis:~$ ssh -i ./key
