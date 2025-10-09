@@ -6,7 +6,7 @@ This challenge tells us to launch a terminal, invoke the pwn program using its a
 After getting the flag we need to submit it to finish the challenge.
 
 ##My Solution
-flag: pwn.college{0jUsizh9t8eV29Ko8Jva5FqYdG_.QX4cTO0wSNxIzNzEzW]
+flag: ''' pwn.college{0jUsizh9t8eV29Ko8Jva5FqYdG_.QX4cTO0wSNxIzNzEzW] '''
 1. I click on the challenge and click on start and choose ssh near flag input area
 2. I connected the dojo host using SSH command.
    '''bash
@@ -34,7 +34,7 @@ flag: pwn.college{0jUsizh9t8eV29Ko8Jva5FqYdG_.QX4cTO0wSNxIzNzEzW]
 This challenge asks us to run '/challenge/run' to get the flag.
 
 ##My Solution
-flag: pwn.college{8Y30v7hyCEQuafbIkFvac9rVaF6.QX1QTN0wSNxIzNzEzW}
+flag: ''' pwn.college{8Y30v7hyCEQuafbIkFvac9rVaF6.QX1QTN0wSNxIzNzEzW} '''
 1. I click on the challenge and click on start and choose ssh near flag input area
 2. I connected the dojo host using SSH command.
    '''bash
