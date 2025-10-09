@@ -4,7 +4,7 @@ This is for 3 challanges i found difficult to solve
 
 1) Reading Shell Scripts (Chaining Commands)
 > Code for this challenge is
- '''
+```bash
 hacker@chaining~reading-shell-scripts:~$ file /challenge/run
 /challenge/run: setuid a /opt/pwn.college/bash script, ASCII text executable
 hacker@chaining~reading-shell-scripts:~$ sed -n '1,200p' /challenge/run
@@ -34,9 +34,9 @@ Read the /challenge/run file to figure out the correct password!
 hacker@chaining~reading-shell-scripts:~$ printf 'hack the PLANET\n' | /challenge/run || printf 'hack the planet\n' | /challenge/run
 CORRECT! Your flag:
 pwn.college{w0tXUXc6AIworZQR6SIuJv2hGuk.0lMwgDOxwSNxIzNzEzW}
-'''
 
-> Way:
+'''
+Way:
 a) I wasn't able to understand what the challenge required
 b) I tried using some stuff used in the previous challenges in this module
 c) But that wasn't enough and wasn't giving answers
@@ -522,12 +522,15 @@ g) I found this challenge a bit difficult as I had to remember previous modules 
 This is for 3 challanges i found difficult to solve
 
 
-1) Reading Shell Scripts (Chaining Commands)
-Code:
-'''
+---
+
+## 1) Reading Shell Scripts (Chaining Commands)
+
+**Code:**
+```bash
 hacker@chaining~reading-shell-scripts:~$ file /challenge/run
 /challenge/run: setuid a /opt/pwn.college/bash script, ASCII text executable
->hacker@chaining~reading-shell-scripts:~$ sed -n '1,200p' /challenge/run
+hacker@chaining~reading-shell-scripts:~$ sed -n '1,200p' /challenge/run
 #!/opt/pwn.college/bash
 
 read GUESS
@@ -571,10 +574,6 @@ k) It took me 2 days to finish it
 l) I had taken help from my friends who had done it but that help wasn't good enough as they had just helped me understanding the challenge just like what i asked chatgpt
 m) After getting answer it became easier to continue the rest of the challenges
 n) The thing which made this challenge difficult for me was mixing python statements and getting confused in echo statements together
-
-
-
-
 
 
 
