@@ -1,13 +1,15 @@
 #Digesting Documentation
-learning-from-documentation
+#learning-from-documentation
 
-Flag: pwn.college{UTc92aXzc7wMQJDJwWLL8FjP1yx.QX0ITO0wSN0EzNzEzW}
+Flag: ''' pwn.college{UTc92aXzc7wMQJDJwWLL8FjP1yx.QX0ITO0wSN0EzNzEzW} '''
 
-WSL terminal session:
-
+Code:
+'''
 hacker@man~learning-from-documentation:~$ /challenge/challenge --giveflag
 Correct argument! Here is your flag:
 pwn.college{UTc92aXzc7wMQJDJwWLL8FjP1yx.QX0ITO0wSN0EzNzEzW}
+'''
+
 My solve
 
 The challenge documentation explicitly instructed using --giveflag. Running /challenge/challenge --giveflag returned the flag.
@@ -22,13 +24,15 @@ Challenge description / on-board docs.
 
 learning-complex-usage
 
-Flag: pwn.college{EPZyYIYCl4nE0EfwApIQuD_ueHL.QX1ITO0wSN0EzNzEzW}
+Flag: ''' pwn.college{EPZyYIYCl4nE0EfwApIQuD_ueHL.QX1ITO0wSN0EzNzEzW} '''
 
-WSL terminal session:
-
+Code:
+'''
 hacker@man~learning-complex-usage:~$ /challenge/challenge --printfile ~/not-the-flag
 Correct argument! Here is the /home/hacker/not-the-flag file:
 pwn.college{EPZyYIYCl4nE0EfwApIQuD_ueHL.QX1ITO0wSN0EzNzEzW}
+'''
+
 My solve
 
 Used the documented --printfile option with the path ~/not-the-flag to print the target file's contents.
@@ -43,13 +47,15 @@ Challenge docs.
 
 reading-manuals
 
-Flag: pwn.college{44QMvvlSIdMdK4yaUMARf8WdpnC.QX0EDO0wSN0EzNzEzW}
+Flag: ''' pwn.college{44QMvvlSIdMdK4yaUMARf8WdpnC.QX0EDO0wSN0EzNzEzW} '''
 
-WSL terminal session:
-
+Code:
+'''
 hacker@man~reading-manuals:~$ man challenge
 hacker@man~reading-manuals:~$ /challenge/challenge --vvlddy 444
 Correct usage! Your flag: pwn.college{44QMvvlSIdMdK4yaUMARf8WdpnC.QX0EDO0wSN0EzNzEzW}
+'''
+
 My solve
 
 Read the challenge manpage to discover a hidden/less-obvious option. Invoking with --vvlddy 444 returned the flag.
@@ -64,14 +70,16 @@ man pages (challenge manpage).
 
 searching-manuals
 
-Flag: pwn.college{EQK9O1SG9BBH5p55alrfN_TeqXY.QX1EDO0wSN0EzNzEzW}
+Flag: ''' pwn.college{EQK9O1SG9BBH5p55alrfN_TeqXY.QX1EDO0wSN0EzNzEzW} '''
 
-WSL terminal session:
-
+Code:
+'''
 hacker@man~searching-manuals:~$ man challenge
 hacker@man~searching-manuals:~$ /challenge/challenge --vpqijf
 Initializing...
 Correct usage! Your flag: pwn.college{EQK9O1SG9BBH5p55alrfN_TeqXY.QX1EDO0wSN0EzNzEzW}
+'''
+
 My solve
 
 Searched inside the manpage (using man’s interactive search, e.g., / then n) to locate the --vpqijf option and invoked it to get the flag.
@@ -86,14 +94,16 @@ man (search features).
 
 searching-for-manuals
 
-Flag: pwn.college{YBpnqXdTabtW3Colq25P7UMFVCu.QX2EDO0wSN0EzNzEzW}
+Flag: ''' pwn.college{YBpnqXdTabtW3Colq25P7UMFVCu.QX2EDO0wSN0EzNzEzW} '''
 
-WSL terminal session:
-
+Code:
+'''
 hacker@man~searching-for-manuals:~$ man -K challenge/challenge
 /challenge/challenge
 hacker@man~searching-for-manuals:~$ /challenge/challenge --pnqdab 325
 Correct usage! Your flag: pwn.college{YBpnqXdTabtW3Colq25P7UMFVCu.QX2EDO0wSN0EzNzEzW}
+'''
+
 My solve
 
 The challenge manpage was randomized; I used man -K (search the man-db for content) to locate the correct man entry and then used the revealed option to get the flag.
@@ -108,10 +118,10 @@ man documentation (-K search).
 
 helpful-programs
 
-Flag: pwn.college{oMKBqZiUcA375uy0T2SmV_zgOjH.QX3IDO0wSN0EzNzEzW}
+Flag: ''' pwn.college{oMKBqZiUcA375uy0T2SmV_zgOjH.QX3IDO0wSN0EzNzEzW} '''
 
-WSL terminal session:
-
+Code:
+'''
 hacker@man~helpful-programs:~$ /challenge/challenge --help
 usage: a challenge to make you ask for help [-h] [--fortune] [-v] [-g GIVE_THE_FLAG] [-p]
 
@@ -126,6 +136,8 @@ hacker@man~helpful-programs:~$ /challenge/challenge -p
 The secret value is: 375
 hacker@man~helpful-programs:~$ /challenge/challenge -g 375
 Correct usage! Your flag: pwn.college{oMKBqZiUcA375uy0T2SmV_zgOjH.QX3IDO0wSN0EzNzEzW}
+'''
+
 My solve
 
 Used --help to discover available options; -p printed the secret value (375) required by -g, and -g 375 produced the flag.
@@ -140,10 +152,10 @@ Program --help output.
 
 help-for-builtins
 
-Flag: pwn.college{0Eo06yGAAJNBhWlciFhGZaiR_M-.QX0ETO0wSN0EzNzEzW}
+Flag: ''' pwn.college{0Eo06yGAAJNBhWlciFhGZaiR_M-.QX0ETO0wSN0EzNzEzW} '''
 
-WSL terminal session:
-
+Code:
+'''
 hacker@man~help-for-builtins:~$ help challenge
 challenge: challenge [--fortune] [--version] [--secret SECRET]
     This builtin command will read you the flag, given the right arguments!
@@ -157,6 +169,8 @@ challenge: challenge [--fortune] [--version] [--secret SECRET]
 hacker@man~help-for-builtins:~$ challenge --secret 0Eo06yGA
 Correct! Here is your flag!
 pwn.college{0Eo06yGAAJNBhWlciFhGZaiR_M-.QX0ETO0wSN0EzNzEzW}
+'''
+
 My solve
 
 Used the shell builtin help to reveal the --secret option and its required value; invoked the builtin to obtain the flag.
