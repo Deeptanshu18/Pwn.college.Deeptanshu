@@ -5,11 +5,14 @@ This module will help us to learn how to write shell scripts
 This challenge teaches us to chain commands with semicolons
 
 #My Solve
-flag: pwn.college{06v186uETJLNB2ekxDXFHtWUW_s.QX1UDO0wSNxIzNzEzW}
+flag: ''' pwn.college{06v186uETJLNB2ekxDXFHtWUW_s.QX1UDO0wSNxIzNzEzW} '''
 
+Code:
+'''
 hacker@chaining~chaining-with-semicolons:~$ /challenge/pwn; /challenge/college
 Yes! You chained /challenge/pwn and /challenge/college! Here is your flag:
 pwn.college{06v186uETJLNB2ekxDXFHtWUW_s.QX1UDO0wSNxIzNzEzW}
+'''
 
 #What I Learned
 how to chain commands with ';'
@@ -21,10 +24,13 @@ pwn.college
 Learning how to use && in chains
 
 #My Solve
-flag: pwn.college{kvE9J2IzxnP81RHFWGKUZ2Xjz9D.0lM0MDOxwSNxIzNzEzW}
+flag: ''' pwn.college{kvE9J2IzxnP81RHFWGKUZ2Xjz9D.0lM0MDOxwSNxIzNzEzW} '''
 
+Code:
+'''
 hacker@chaining~building-on-success:~$ /challenge/first-success && /challenge/second
 Nice chaining! Flag: pwn.college{kvE9J2IzxnP81RHFWGKUZ2Xjz9D.0lM0MDOxwSNxIzNzEzW}
+'''
 
 #What I Learned
 how to use && and proccessses module together
@@ -36,12 +42,15 @@ pwn.college
 how to use || in chains
 
 #My Solve
-flag: pwn.college{Iu5nN_4XOXHN2ytli3wB9MTiV84.01M0MDOxwSNxIzNzEzW}
+flag: ''' pwn.college{Iu5nN_4XOXHN2ytli3wB9MTiV84.01M0MDOxwSNxIzNzEzW} '''
 
+Code:
+'''
 hacker@chaining~handling-failure:~$ touch /tmp/.chained /tmp/.or && ls -l /tmp/.chained /tmp/.or && false || /challenge/second
 -rw-r--r-- 1 hacker hacker 0 Oct  7 13:50 /tmp/.chained
 -rw-r--r-- 1 hacker hacker 0 Oct  7 13:50 /tmp/.or
 Nice chaining! Flag: pwn.college{Iu5nN_4XOXHN2ytli3wB9MTiV84.01M0MDOxwSNxIzNzEzW}
+'''
 
 #What I Learned
 How to use || condition to this
@@ -53,8 +62,10 @@ pwn.college
 We learn how to use .sh command
 
 #My Solve
-flag: pwn.college{0a8hYkAHEiGhLe92HNgV38H663Y.QXxcDO0wSNxIzNzEzW}
+flag: ''' pwn.college{0a8hYkAHEiGhLe92HNgV38H663Y.QXxcDO0wSNxIzNzEzW} '''
 
+Code:
+'''
 hacker@chaining~your-first-shell-script:~$ cat > x.sh <<'SH'
 > /challenge/pwn
 > /challenge/college
@@ -63,6 +74,7 @@ hacker@chaining~your-first-shell-script:~$ chmod +x x.sh
 hacker@chaining~your-first-shell-script:~$ bash x.sh
 Great job, you've written your first shell script! Here is the flag:
 pwn.college{0a8hYkAHEiGhLe92HNgV38H663Y.QXxcDO0wSNxIzNzEzW}
+'''
 
 #What I learned
 How to code inside a command using .sh command
@@ -75,8 +87,10 @@ chatgpt (learning about .sh command)
 We learn how to use piping in the chain
 
 #My Solve
-flag: pwn.college{0KCF2Y1vH5MYWoYBKS5noxSKPnV.QX4ETO0wSNxIzNzEzW}
+flag: ''' pwn.college{0KCF2Y1vH5MYWoYBKS5noxSKPnV.QX4ETO0wSNxIzNzEzW} '''
 
+Code:
+'''
 hacker@chaining~redirecting-script-output:~$ cat > x.sh <<'SH'
 > /challenge/pwn
 > /challenge/college
@@ -84,6 +98,7 @@ hacker@chaining~redirecting-script-output:~$ cat > x.sh <<'SH'
 hacker@chaining~redirecting-script-output:~$ bash x.sh | /challenge/solve
 Correct! Here is your flag:
 pwn.college{0KCF2Y1vH5MYWoYBKS5noxSKPnV.QX4ETO0wSNxIzNzEzW}
+'''
 
 #What I Learned
 How to use previously learned commands in piping module
@@ -95,8 +110,10 @@ pwn.college
 Teaches us why bash is in bash script.sh
 
 #My Solve
-flag: pwn.college{kpA0VIWaNznN13rirk2Lq1VlusR.QX0cjM1wSNxIzNzEzW}
+flag: ''' pwn.college{kpA0VIWaNznN13rirk2Lq1VlusR.QX0cjM1wSNxIzNzEzW} '''
 
+Code:
+'''
 hacker@chaining~executable-shell-scripts:~$ cat > runsolve.sh <<'SH'
 > /challenge/solve
 > SH
@@ -104,6 +121,7 @@ hacker@chaining~executable-shell-scripts:~$ chmod +x runsolve.sh
 hacker@chaining~executable-shell-scripts:~$ ./runsolve.sh
 Congratulations on your shell script execution! Your flag:
 pwn.college{kpA0VIWaNznN13rirk2Lq1VlusR.QX0cjM1wSNxIzNzEzW}
+'''
 
 #What I Learned
 Why we use bash
@@ -116,8 +134,10 @@ chatgpt(to understand more about the command)
 Teaches us how to invoke a command in python in a shell
 
 #My Solve
-flag: pwn.college{0YaDe1PJ2ak-fmgDHa7lewrMBqI.0VOzMDOxwSNxIzNzEzW}
+flag: ''' pwn.college{0YaDe1PJ2ak-fmgDHa7lewrMBqI.0VOzMDOxwSNxIzNzEzW} '''
 
+Code:
+'''
 hacker@chaining~understanding-shebangs:~$ cat > /home/hacker/solve.sh.new <<'SH'
 > #!/bin/bash
 > echo "hack the planet"
@@ -131,6 +151,7 @@ hacker@chaining~understanding-shebangs:~$ /challenge/run
 Testing your script...
 Perfect! Your flag:
 Flag: pwn.college{0YaDe1PJ2ak-fmgDHa7lewrMBqI.0VOzMDOxwSNxIzNzEzW}
+'''
 
 #What I Learned
 how to use .sh and .py
@@ -142,8 +163,10 @@ pwn.college
 Teaches us how shell accepts arguments
 
 #My Solve
-flag: pwn.college{w557C9OA2c9cK9tXn__SkWR7UkH.0VNzMDOxwSNxIzNzEzW}
+flag: ''' pwn.college{w557C9OA2c9cK9tXn__SkWR7UkH.0VNzMDOxwSNxIzNzEzW} '''
 
+Code:
+'''
 hacker@chaining~scripting-with-arguments:~$ cat > /home/hacker/solve.sh.new <<'SH'
 > #!/bin/bash
 > printf '%s %s\n' "$2" "$1"
@@ -157,6 +180,7 @@ hacker@chaining~scripting-with-arguments:~$ /challenge/run
 Correct! Your script properly reversed the arguments.
 Here's your flag:
 pwn.college{w557C9OA2c9cK9tXn__SkWR7UkH.0VNzMDOxwSNxIzNzEzW}
+'''
 
 #What I Learned
 How a shell accepts arguments
@@ -169,8 +193,10 @@ chatgpt(understanding more about the challenge)
 Teaches us to use conditional operators in arguments in a shell
 
 #My Solve
-flag: pwn.college{seGD72W9lwxqAkXuLo1TN_2EnMA.0lNzMDOxwSNxIzNzEzW}
+flag: ''' pwn.college{seGD72W9lwxqAkXuLo1TN_2EnMA.0lNzMDOxwSNxIzNzEzW} '''
 
+Code:
+'''
 hacker@chaining~scripting-with-conditionals:~$ cat > /home/hacker/solve.sh.new <<'SH'
 > #!/bin/bash
 > if [ "$1" = "pwn" ]; then
@@ -187,6 +213,7 @@ hacker@chaining~scripting-with-conditionals:~$ /challenge/run
 Correct! Your script properly handles all the conditions.
 Here's your flag:
 pwn.college{seGD72W9lwxqAkXuLo1TN_2EnMA.0lNzMDOxwSNxIzNzEzW}
+'''
 
 #What I Learned
 How to make the arguments inside the shell smarter with conditonal operators
@@ -198,9 +225,10 @@ pwn.college
 Teaches us to use if else statements in an argument
 
 #My Solve
-flag: pwn.college{UKQWxFLI7-cTgyJD06TgXKHXGXO.01NzMDOxwSNxIzNzEzW}
+flag: ''' pwn.college{UKQWxFLI7-cTgyJD06TgXKHXGXO.01NzMDOxwSNxIzNzEzW}'''
 
-
+Code:
+'''
 hacker@chaining~scripting-with-default-cases:~$ cat > /home/hacker/solve.sh.new <<'SH'
 > #!/bin/bash
 > if [ "$1" = "pwn" ]; then
@@ -220,6 +248,7 @@ hacker@chaining~scripting-with-default-cases:~$ /challenge/run
 Correct! Your script properly handles the if/else conditions.
 Here's your flag:
 pwn.college{UKQWxFLI7-cTgyJD06TgXKHXGXO.01NzMDOxwSNxIzNzEzW}
+'''
 
 #What I Learned
 How to use if else statements
@@ -231,8 +260,10 @@ pwn.colege
 Teaches us how to use elif after if and else statements in an argument
 
 #My Solve
-flag: pwn.college{sa2MVUxAFpo8EVKBv7dXjRjJNtW.0FOzMDOxwSNxIzNzEzW}
+flag: ''' pwn.college{sa2MVUxAFpo8EVKBv7dXjRjJNtW.0FOzMDOxwSNxIzNzEzW} '''
 
+Code:
+'''
 hacker@chaining~scripting-with-multiple-conditions:~$ cat > /home/hacker/solve.sh.new <<'SH'
 > #!/bin/bash
 # multi-branch response (explicit and unambiguous)
@@ -281,6 +312,7 @@ hacker@chaining~scripting-with-multiple-conditions:~$ /challenge/run
 Correct! Your script properly handles all the conditions with elif.
 Here's your flag:
 pwn.college{sa2MVUxAFpo8EVKBv7dXjRjJNtW.0FOzMDOxwSNxIzNzEzW}
+'''
 
 #What I learned
 How to use eluf statements
@@ -292,8 +324,10 @@ pwn.college
 Teaches us how to read shell scripts
 
 #My Solve
-flag: pwn.college{w0tXUXc6AIworZQR6SIuJv2hGuk.0lMwgDOxwSNxIzNzEzW}
+flag: ''' pwn.college{w0tXUXc6AIworZQR6SIuJv2hGuk.0lMwgDOxwSNxIzNzEzW} '''
 
+Code:
+'''
 hacker@chaining~reading-shell-scripts:~$ file /challenge/run
 /challenge/run: setuid a /opt/pwn.college/bash script, ASCII text executable
 hacker@chaining~reading-shell-scripts:~$ sed -n '1,200p' /challenge/run
@@ -324,6 +358,7 @@ hacker@chaining~reading-shell-scripts:~$ printf 'hack the PLANET\n' | /challenge
 CORRECT! Your flag:
 pwn.college{w0tXUXc6AIworZQR6SIuJv2hGuk.0lMwgDOxwSNxIzNzEzW}
 hacker@chaining~reading-shell-scripts:~$ 
+'''
 
 #What I Learned
 How to read scripts
