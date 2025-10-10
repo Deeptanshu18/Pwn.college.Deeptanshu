@@ -1,5 +1,13 @@
-Processing Jobs
+###Processes and Jobs
+This module tells us how to interact with processes and having fun with them
 
+##Listing Processes
+This challenge teaches us how to use ps
+
+#My Solve
+flag: ''' pwn.college{s81IEXgTmNzK4OhnXKg_7TgVw9_.QX4MDO0wSNxIzNzEzW} '''
+
+'''
 hacker@processes~listing-processes:~$ ps -efww
 UID          PID    PPID  C STIME TTY          TIME CMD
 root           1       0  0 13:51 ?        00:00:00 /sbin/docker-init -- /nix/var/nix/profiles/dojo-workspace/bin/dojo-init /run/dojo/bin/sleep 6h
@@ -16,9 +24,21 @@ hacker@processes~listing-processes:~$ /challenge/21609-run-16015
 Yahaha, you found me! Here is your flag:
 pwn.college{s81IEXgTmNzK4OhnXKg_7TgVw9_.QX4MDO0wSNxIzNzEzW}
 Now I will sleep for a while (so that you could find me with 'ps').
+'''
 
+#What I Learned
+How to use ps command
 
+#Refrence
+pwn.college
 
+##Killing Processes
+Teaches us how to use kill command
+
+#My Solve
+flag: ''' pwn.college{cOQFV7c8UHLnpJxEx85bWO4l29P.QXyQDO0wSNxIzNzEzW} '''
+
+'''
 hacker@processes~killing-processes:~$ ps -efww | grep /challenge/dont_run
 hacker       136     135  0 13:54 ?        00:00:00 /challenge/dont_run
 hacker       177     161  0 13:57 pts/1    00:00:00 grep --color=auto /challenge/dont_run
@@ -30,22 +50,42 @@ bash: kill: (179) - No such process
 hacker@processes~killing-processes:~$ /challenge/run
 Great job! Here is your payment:
 pwn.college{cOQFV7c8UHLnpJxEx85bWO4l29P.QXyQDO0wSNxIzNzEzW}
+'''
 
+#What I Learned
+How to use kill command
 
+#Refrence
+pwn.college
 
+##Interrupting Processes
+Teaches us how to use cntr-C during /challenge/run
 
+#My Solve
+flag: ''' pwn.college{0zuWCFWSj9W7jT0KMXVu98CvfIU.QXzQDO0wSNxIzNzEzW} '''
 
-
+'''
 hacker@processes~interrupting-processes:~$ /challenge/run
 I could give you the flag... but I won't, until this process exits. Remember, 
 you can force me to exit with Ctrl-C. Try it now!
 ^C
 Good job! You have used Ctrl-C to interrupt this process! Here is your flag:
 pwn.college{0zuWCFWSj9W7jT0KMXVu98CvfIU.QXzQDO0wSNxIzNzEzW}
+'''
 
+#What I Learned
+Having fun with program
 
+#Reference
+pwn.college
 
+##Killing Misbehaving Processes
+Teaches us which flag is correct and how to see how the program is misbehaving
 
+#My Solve
+flag: ''' pwn.college{M8Yq6NPBUvGdZi53CEEaZPTnKlr.0FNzMDOxwSNxIzNzEzW} '''
+
+'''
 hacker@processes~killing-misbehaving-processes:~$ ps auxww | grep /challenge/decoy
 hacker       217  0.0  0.0 230696  2560 pts/3    S+   14:04   0:00 grep --color=auto /challenge/decoy
 hacker@processes~killing-misbehaving-processes:~$ cat /tmp/flag_fifo
@@ -185,16 +225,21 @@ pwn.college{xQBFEWFOlZG0fVti0nt.XAhPrQ4ai3mP2qeeLFAezLCN2zx}
 pwn.college{VKt8KDnqLLcrB0ZlXuh-mFX0dwY0xpVL2cXzytGf-9uVOqL}
 pwn.college{M8Yq6NPBUvGdZi53CEEaZPTnKlr.0FNzMDOxwSNxIzNzEzW}
 pwn.college{M8Yq6NPBUvGdZi53CEEaZPTnKlr.0FNzMDOxwSNxIzNzEzW}
+'''
 
+#What I Learned
+How to understand the misbehaving program
 
+#Reference
+pwn.college
 
+##Suspending Processes
+Teaches u show to suspend a process
 
+#My Solve
+flag: ''' pwn.college{UYMDQb2CiKyfs71OMDSz2TNl581.QX1QDO0wSNxIzNzEzW} '''
 
-
-
-
-
-
+'''
 hacker@processes~suspending-processes:~$ /challenge/run
 I'll only give you the flag if there's already another copy of me running in 
 this terminal... Let's check!
@@ -221,9 +266,15 @@ root         162     160  0 14:07 pts/1    00:00:00 ps -f
 
 Yay, I found another version of me! Here is the flag:
 pwn.college{UYMDQb2CiKyfs71OMDSz2TNl581.QX1QDO0wSNxIzNzEzW}
+'''
 
+#What I Learned
+How to suspend a file
 
+#Reference
+pwn.college
 
+##
 
 hacker@processes~suspending-processes:~$ /challenge/run
 I'll only give you the flag if there's already another copy of me running in 
@@ -384,9 +435,9 @@ Anyways! Here is your flag!
 pwn.college{EqlAVoeQzPIM9mkepJ8dcbN4oQQ.QX5QDO0wSNxIzNzEzW}
 
 
+##Process Exit Code
 
-
-
+flag: ''' pwn.college{Y7uWd8TsIKBk9cZk6pP2rjGaoux.QX5YDO1wSNxIzNzEzW} '''
 
 hacker@processes~process-exit-codes:~$ /challenge/get-code
 Exiting with an error code!
