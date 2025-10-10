@@ -1,127 +1,152 @@
-#Digesting Documentation
-#learning-from-documentation
+# Digesting Documentation — Challenge Write-up
 
-Flag: ''' pwn.college{UTc92aXzc7wMQJDJwWLL8FjP1yx.QX0ITO0wSN0EzNzEzW} '''
+Formatted write-up of the "Digesting Documentation" module. Terminal commands and outputs are placed inside `bash` code blocks and flags are shown in fenced code blocks.
 
-Code:
-'''
+---
+
+## learning-from-documentation
+
+**Flag**
+
+```
+pwn.college{UTc92aXzc7wMQJDJwWLL8FjP1yx.QX0ITO0wSN0EzNzEzW}
+```
+
+**Code / Solution**
+
+```bash
 hacker@man~learning-from-documentation:~$ /challenge/challenge --giveflag
 Correct argument! Here is your flag:
 pwn.college{UTc92aXzc7wMQJDJwWLL8FjP1yx.QX0ITO0wSN0EzNzEzW}
-'''
+```
 
-My solve
+**My solve**
 
-The challenge documentation explicitly instructed using --giveflag. Running /challenge/challenge --giveflag returned the flag.
+The challenge documentation explicitly instructed using `--giveflag`. Running `/challenge/challenge --giveflag` returned the flag.
 
-What I learned
+**What I learned**
 
-How simple command-line arguments are documented and used; using documentation to discover required flags.
+* Read documentation to discover required command-line options.
 
-References
+---
 
-Challenge description / on-board docs.
+## learning-complex-usage
 
-learning-complex-usage
+**Flag**
 
-Flag: ''' pwn.college{EPZyYIYCl4nE0EfwApIQuD_ueHL.QX1ITO0wSN0EzNzEzW} '''
+```
+pwn.college{EPZyYIYCl4nE0EfwApIQuD_ueHL.QX1ITO0wSN0EzNzEzW}
+```
 
-Code:
-'''
+**Code / Solution**
+
+```bash
 hacker@man~learning-complex-usage:~$ /challenge/challenge --printfile ~/not-the-flag
 Correct argument! Here is the /home/hacker/not-the-flag file:
 pwn.college{EPZyYIYCl4nE0EfwApIQuD_ueHL.QX1ITO0wSN0EzNzEzW}
-'''
+```
 
-My solve
+**My solve**
 
-Used the documented --printfile option with the path ~/not-the-flag to print the target file's contents.
+Used the documented `--printfile` option with the path `~/not-the-flag` to print the target file's contents.
 
-What I learned
+**What I learned**
 
-Some options themselves take arguments (e.g., --printfile <path>); read docs to know what type of argument to supply.
+* Options can accept arguments (e.g., `--printfile <path>`). Consult docs for expected argument types.
 
-References
+---
 
-Challenge docs.
+## reading-manuals
 
-reading-manuals
+**Flag**
 
-Flag: ''' pwn.college{44QMvvlSIdMdK4yaUMARf8WdpnC.QX0EDO0wSN0EzNzEzW} '''
+```
+pwn.college{44QMvvlSIdMdK4yaUMARf8WdpnC.QX0EDO0wSN0EzNzEzW}
+```
 
-Code:
-'''
+**Code / Solution**
+
+```bash
 hacker@man~reading-manuals:~$ man challenge
 hacker@man~reading-manuals:~$ /challenge/challenge --vvlddy 444
 Correct usage! Your flag: pwn.college{44QMvvlSIdMdK4yaUMARf8WdpnC.QX0EDO0wSN0EzNzEzW}
-'''
+```
 
-My solve
+**My solve**
 
-Read the challenge manpage to discover a hidden/less-obvious option. Invoking with --vvlddy 444 returned the flag.
+Read the challenge's manpage to discover a hidden option. Invoking `--vvlddy 444` returned the flag.
 
-What I learned
+**What I learned**
 
-How to use man pages to find hidden or uncommon options and the basic manpage layout (NAME, SYNOPSIS, DESCRIPTION).
+* Man pages often show NAME, SYNOPSIS, and DESCRIPTION — useful for discovering hidden or uncommon options.
 
-References
+---
 
-man pages (challenge manpage).
+## searching-manuals
 
-searching-manuals
+**Flag**
 
-Flag: ''' pwn.college{EQK9O1SG9BBH5p55alrfN_TeqXY.QX1EDO0wSN0EzNzEzW} '''
+```
+pwn.college{EQK9O1SG9BBH5p55alrfN_TeqXY.QX1EDO0wSN0EzNzEzW}
+```
 
-Code:
-'''
+**Code / Solution**
+
+```bash
 hacker@man~searching-manuals:~$ man challenge
 hacker@man~searching-manuals:~$ /challenge/challenge --vpqijf
 Initializing...
 Correct usage! Your flag: pwn.college{EQK9O1SG9BBH5p55alrfN_TeqXY.QX1EDO0wSN0EzNzEzW}
-'''
+```
 
-My solve
+**My solve**
 
-Searched inside the manpage (using man’s interactive search, e.g., / then n) to locate the --vpqijf option and invoked it to get the flag.
+Used man’s interactive search (e.g., `/` then `n`) to locate the `--vpqijf` option and invoked it to get the flag.
 
-What I learned
+**What I learned**
 
-Using man page searching (/, n, N) to find specific options or strings inside manuals.
+* Use `/`, `n`, and `N` inside `man` to search and navigate to relevant sections.
 
-References
+---
 
-man (search features).
+## searching-for-manuals
 
-searching-for-manuals
+**Flag**
 
-Flag: ''' pwn.college{YBpnqXdTabtW3Colq25P7UMFVCu.QX2EDO0wSN0EzNzEzW} '''
+```
+pwn.college{YBpnqXdTabtW3Colq25P7UMFVCu.QX2EDO0wSN0EzNzEzW}
+```
 
-Code:
-'''
+**Code / Solution**
+
+```bash
 hacker@man~searching-for-manuals:~$ man -K challenge/challenge
 /challenge/challenge
 hacker@man~searching-for-manuals:~$ /challenge/challenge --pnqdab 325
 Correct usage! Your flag: pwn.college{YBpnqXdTabtW3Colq25P7UMFVCu.QX2EDO0wSN0EzNzEzW}
-'''
+```
 
-My solve
+**My solve**
 
-The challenge manpage was randomized; I used man -K (search the man-db for content) to locate the correct man entry and then used the revealed option to get the flag.
+Used `man -K` to search the man-db for content and found the correct entry, then used the revealed option to get the flag.
 
-What I learned
+**What I learned**
 
-man -K can search installed manpage content when names are unpredictable; useful for locating buried docs.
+* `man -K` searches manpage contents when names are unpredictable.
 
-References
+---
 
-man documentation (-K search).
+## helpful-programs
 
-helpful-programs
+**Flag**
 
-Flag: ''' pwn.college{oMKBqZiUcA375uy0T2SmV_zgOjH.QX3IDO0wSN0EzNzEzW} '''
+```
+pwn.college{oMKBqZiUcA375uy0T2SmV_zgOjH.QX3IDO0wSN0EzNzEzW}
+```
 
-Code:
-'''
+**Code / Solution**
+
+```bash
 hacker@man~helpful-programs:~$ /challenge/challenge --help
 usage: a challenge to make you ask for help [-h] [--fortune] [-v] [-g GIVE_THE_FLAG] [-p]
 
@@ -136,26 +161,29 @@ hacker@man~helpful-programs:~$ /challenge/challenge -p
 The secret value is: 375
 hacker@man~helpful-programs:~$ /challenge/challenge -g 375
 Correct usage! Your flag: pwn.college{oMKBqZiUcA375uy0T2SmV_zgOjH.QX3IDO0wSN0EzNzEzW}
-'''
+```
 
-My solve
+**My solve**
 
-Used --help to discover available options; -p printed the secret value (375) required by -g, and -g 375 produced the flag.
+Used `--help` to discover options; `-p` printed the secret (375), then `-g 375` produced the flag.
 
-What I learned
+**What I learned**
 
---help is a quick way to discover usage and option semantics when a manpage is absent.
+* `--help` is a quick way to discover usage and option semantics when a manpage is absent.
 
-References
+---
 
-Program --help output.
+## help-for-builtins
 
-help-for-builtins
+**Flag**
 
-Flag: ''' pwn.college{0Eo06yGAAJNBhWlciFhGZaiR_M-.QX0ETO0wSN0EzNzEzW} '''
+```
+pwn.college{0Eo06yGAAJNBhWlciFhGZaiR_M-.QX0ETO0wSN0EzNzEzW}
+```
 
-Code:
-'''
+**Code / Solution**
+
+```bash
 hacker@man~help-for-builtins:~$ help challenge
 challenge: challenge [--fortune] [--version] [--secret SECRET]
     This builtin command will read you the flag, given the right arguments!
@@ -169,17 +197,18 @@ challenge: challenge [--fortune] [--version] [--secret SECRET]
 hacker@man~help-for-builtins:~$ challenge --secret 0Eo06yGA
 Correct! Here is your flag!
 pwn.college{0Eo06yGAAJNBhWlciFhGZaiR_M-.QX0ETO0wSN0EzNzEzW}
-'''
+```
 
-My solve
+**My solve**
 
-Used the shell builtin help to reveal the --secret option and its required value; invoked the builtin to obtain the flag.
+Used the shell builtin `help` to reveal the `--secret` option and its required value; invoked the builtin to obtain the flag.
 
-What I learned
+**What I learned**
 
-Difference between external programs (with manpages or --help) and shell builtins (use help); builtins are handled inside the shell.
+* Shell builtins use `help` rather than `man` or `--help`.
 
-References
+---
 
-Shell help builtin; challenge notes.
+**References**
 
+* On-board challenge documentation and man pages.
