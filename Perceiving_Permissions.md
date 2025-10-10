@@ -1,7 +1,13 @@
-Perceiving Permissions
+###Perceiving Permissions
+This module tells us about the permissions in linux and how to acdess the files across different users
 
+##Changing File ownership
+This challenge teaches us about ownership of flag and changing original file name into hacker
 
+#My Solve
+flag: ''' pwn.college{8KmyDVKL6wvkRFref41CkCMzPgW.QXxEjN0wSNxIzNzEzW} '''
 
+'''
 hacker@permissions~changing-file-ownership:~$ chown hacker /flag
 hacker@permissions~changing-file-ownership:~$ ls -1 /flag
 /flag
@@ -9,21 +15,41 @@ hacker@permissions~changing-file-ownership:~$ ls -l /flag
 -r-------- 1 hacker root 60 Oct  6 14:57 /flag
 hacker@permissions~changing-file-ownership:~$ cat /flag
 pwn.college{8KmyDVKL6wvkRFref41CkCMzPgW.QXxEjN0wSNxIzNzEzW}
+'''
 
+#What I Learned
+How to take ownership of the flag and retrieve it 
 
+#Reference
+pwn.college
 
+##Grouping And Files
+This challenge teaches us how to own and group files them
 
+#My Solve
+flag: ''' pwn.college{k1P5gvL2LvL01WnVX8tT9JiU0tp.QXxcjM1wSNxIzNzEzW} '''
+
+'''
 hacker@permissions~groups-and-files:~$ chgrp hacker /flag
 hacker@permissions~groups-and-files:~$ ls -l /flag
 -r--r----- 1 root hacker 60 Oct  6 14:59 /flag
 hacker@permissions~groups-and-files:~$ cat /flag
 pwn.college{k1P5gvL2LvL01WnVX8tT9JiU0tp.QXxcjM1wSNxIzNzEzW}
+'''
 
+#What I Learned
+How to own and group files them 
 
+#Reference
+pwn.college
 
+##Fun With Groups Names
+This challenge teaches us to use id command and have fun with the names
 
+#My Solve
+flag: ''' pwn.college{A9sdFn80EqsIBtcQNfxsB1j66fa.QXycjM1wSNxIzNzEzW} '''
 
-
+'''
 hacker@permissions~fun-with-groups-names:~$ id -gn
 grp8490
 hacker@permissions~fun-with-groups-names:~$ chgrp "$(grp8498)" /flag
@@ -37,20 +63,41 @@ hacker@permissions~fun-with-groups-names:~$ ls -l /flag
 -r--r----- 1 root grp8490 60 Oct  6 15:00 /flag
 hacker@permissions~fun-with-groups-names:~$ cat /flag
 pwn.college{A9sdFn80EqsIBtcQNfxsB1j66fa.QXycjM1wSNxIzNzEzW}
+'''
 
+#What I Learned
+How to use id command and have fun with names and usage of cgrp command
 
+#Reference
+pwn.college
 
+##Changing Permissions
+Teaches us how to change permissions using chmmod command
 
+#My Solve
+flag: ''' pwn.college{wISQaSuOyZ7eibaf2UYt3IEJ2DZ.QXzcjM1wSNxIzNzEzW} '''
+
+'''
 hacker@permissions~changing-permissions:~$ chmod o+r /flag
 hacker@permissions~changing-permissions:~$ ls -l /flag
 -r-----r-- 1 root root 60 Oct  6 15:03 /flag
 hacker@permissions~changing-permissions:~$ cat /flag
 pwn.college{wISQaSuOyZ7eibaf2UYt3IEJ2DZ.QXzcjM1wSNxIzNzEzW}
+'''
 
+#What I Learned
+How to use chmod command and changing permissions
 
+#Reference
+pwn.college
 
+##Executable Files
+Teaches us how to execute files using chmod
 
+#My Solve
+flag: ''' pwn.college{ghA3tfgffp8XyQPTMIduJbs6YAU.QXyEjN0wSNxIzNzEzW} '''
 
+'''
 hacker@permissions~executable-files:~$ ls -l /challenge/run
 -r--r--r-- 1 hacker hacker 32 Jan 14  2025 /challenge/run
 hacker@permissions~executable-files:~$ chmod +x /challenge/run
@@ -59,12 +106,21 @@ hacker@permissions~executable-files:~$ ls -l /challenge/run
 hacker@permissions~executable-files:~$ /challenge/run
 Successful execution! Here is your flag:
 pwn.college{ghA3tfgffp8XyQPTMIduJbs6YAU.QXyEjN0wSNxIzNzEzW}
+'''
 
+#What I Learned
+How to use execute files using chmod
 
+#Reference
+pwn.college
 
+##Permission Tweaking Practice
+This chalenge is a game of clues
 
+#My Solve
+flag: ''' pwn.college{81iNsOZzmgjrMgCGP0SOyX4J0rX.QXwEjN0wSNxIzNzEzW} '''
 
-
+'''
 hacker@permissions~permission-tweaking-practice:~$ /challenge/run
 Round 1 of 8!
 
@@ -468,18 +524,22 @@ hacker@permissions~permission-tweaking-practice:~$ ls -l /flag
 -r-----r-- 1 hacker hacker 60 Oct  6 15:07 /flag
 hacker@permissions~permission-tweaking-practice:~$ cat /flag
 pwn.college{81iNsOZzmgjrMgCGP0SOyX4J0rX.QXwEjN0wSNxIzNzEzW}
+'''
 
+#What I Learned
+How to play the game and clues given
 
+#Reference
+pwn.college
+chatgpt(To understand the challenge)
 
+##Permissions Setting Practice
+This challenge is just like the previous challenge 
 
+#My Solve
+flag: ''' pwn.college{8fl6Qv9Thp-VzSt0EVHUzgWrTFT.QXzEjN0wSNxIzNzEzW} '''
 
-
-
-
-
-
-
-
+'''
 hacker@permissions~permissions-setting-practice:~$ chmod u=rw, g=r, o=r /challenge/pwn
 /usr/bin/chmod: invalid mode: ‘u=rw,’
 Try '/usr/bin/chmod --help' for more information.
@@ -758,13 +818,13 @@ root@permissions~the-suid-bit:~# whoami
 root
 root@permissions~the-suid-bit:~# cat /root/flag 2>/dev/null || cat /flag 2>/dev/null
 pwn.college{8fl6Qv9Thp-VzSt0EVHUzgWrTFT.QXzEjN0wSNxIzNzEzW}
+'''
 
+#What I Learned
+Just like previous challenge we learn how to play the game and understand the clues, etc
 
-
-
-
-
-
+#Reference
+pwn.college
 
 
 
