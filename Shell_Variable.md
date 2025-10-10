@@ -1,157 +1,222 @@
-#Shell Variable
-Helps us understand vairbales and printing different values of different variables
+# Shell Variables — Formatted Solutions
 
-##Printing Variables
-Teaches us how to print varibales
+This document formats your **Shell Variable** module. Each challenge includes the flag, the terminal session (in a `bash` code block), a short explanation of the solution, and what you learned.
 
-**Flag** pwn.college{kOK1xr4AcaGX7YcKrTrss-K5D6x.QX3UTN0wSNxIzNzEzW}
+---
 
-##My Solve
+## Printing Variables
+
+**Flag**
+
+```
+pwn.college{kOK1xr4AcaGX7YcKrTrss-K5D6x.QX3UTN0wSNxIzNzEzW}
+```
+
+**Terminal session**
+
+```bash
 hacker@variables~printing-variables:~$ echo $FLAG
 pwn.college{kOK1xr4AcaGX7YcKrTrss-K5D6x.QX3UTN0wSNxIzNzEzW}
-hacker@variables~printing-variables:~$
+```
 
-##What I Learned
-How echo works
-Why $ is used
+**What I learned**
 
-##References
-pwn.college
+* `echo $VAR` prints the value of a shell variable. The dollar sign (`$`) expands the variable.
 
-##Setting Variables
-Helps us to set a varibale and print it
+**References**
 
-**flag** pwn.college{AZyYs0tB39btGRH45KES1SafCgL.QX5UTN0wSNxIzNzEzW}
+* pwn.college
 
-##My Solve
+---
+
+## Setting Variables
+
+**Flag**
+
+```
+pwn.college{AZyYs0tB39btGRH45KES1SafCgL.QX5UTN0wSNxIzNzEzW}
+```
+
+**Terminal session**
+
+```bash
 hacker@variables~setting-variables:~$ export PWN=COLLEGE
 You've set the PWN variable properly! As promised, here is the flag:
 pwn.college{AZyYs0tB39btGRH45KES1SafCgL.QX5UTN0wSNxIzNzEzW}
-hacker@variables~setting-variables:~$
+```
 
-##What I Learned
-how to set a value for a variable
+**What I learned**
 
-##References
-pwn.college
+* `export VAR=value` sets a variable in the current shell and marks it for inheritance by child processes.
 
-##Multi Word Variables
-Helps us to learn quoting
+**References**
 
-**flag** pwn.college{gwx8y_A6_dkQ-72AyQsqi3tqh3C.QXwYTN0wSNxIzNzEzW}
+* pwn.college
 
-##My Solve
-acker@variables~multi-word-variables:~$ PWN="COLLEGE YEAH"
+---
+
+## Multi-Word Variables
+
+**Flag**
+
+```
+pwn.college{gwx8y_A6_dkQ-72AyQsqi3tqh3C.QXwYTN0wSNxIzNzEzW}
+```
+
+**Terminal session**
+
+```bash
+hacker@variables~multi-word-variables:~$ PWN="COLLEGE YEAH"
 You've set the PWN variable properly! As promised, here is the flag:
 pwn.college{gwx8y_A6_dkQ-72AyQsqi3tqh3C.QXwYTN0wSNxIzNzEzW}
-hacker@variables~multi-word-variables:~$
+```
 
-##What I Learned
-How to Quote a variable
+**What I learned**
 
-##References
-pwn.colege
+* Quote multi-word values (e.g., `VAR="two words"`) to preserve spacing.
 
-#Exporting Variables
-Teaches us how to export a value for a variable
+**References**
 
-**flag** pwn.college{8WO60TiTeRInL_t1eUnHXQJredL.QXyYTN0wSNxIzNzEzW}
+* pwn.college
 
-#My Solve
+---
+
+## Exporting Variables
+
+**Flag**
+
+```
+pwn.college{8WO60TiTeRInL_t1eUnHXQJredL.QXyYTN0wSNxIzNzEzW}
+```
+
+**Terminal session**
+
+```bash
 hacker@variables~exporting-variables:~$ export PWN=COLLEGE
-You've set the PWN variable to the proper value!
 hacker@variables~exporting-variables:~$ COLLEGE=PWN
-You've set the PWN variable to the proper value!
-You've set the COLLEGE variable to the proper value!
 hacker@variables~exporting-variables:~$ sh -c 'echo "child sees: PWN=$PWN COLLEGE=$COLLEGE"'
 child sees: PWN=COLLEGE COLLEGE=
-You've set the PWN variable to the proper value!
-You've set the COLLEGE variable to the proper value!
-hacker@variables~exporting-variables:~$ /challenge/run
+...
+/challenge/run
 CORRECT!
-You have exported PWN=COLLEGE and set, but not exported, COLLEGE=PWN. Great 
-job! Here is your flag:
+You have exported PWN=COLLEGE and set, but not exported, COLLEGE=PWN. Great job! Here is your flag:
 pwn.college{8WO60TiTeRInL_t1eUnHXQJredL.QXyYTN0wSNxIzNzEzW}
-You've set the PWN variable to the proper value!
-You've set the COLLEGE variable to the proper value!
-hacker@variables~exporting-variables:~$
+```
 
-##What I Learnedd
-how to export a variable
-hwo to print is using sh
+**What I learned**
 
-##References
-pwn.college
+* Only exported variables are visible to child processes. Setting a variable without `export` makes it local to the current shell.
 
-##Printing Exporting Variables
-Teavhes us to use env insttead of echo
+**References**
 
-**flag** pwn.college{UF-va328jDDhxEmv1XhgJFDc5sa.QX4UTN0wSNxIzNzEzW}
+* pwn.college
 
-##My Solve
+---
+
+## Printing Exported Variables
+
+**Flag**
+
+```
+pwn.college{UF-va328jDDhxEmv1XhgJFDc5sa.QX4UTN0wSNxIzNzEzW}
+```
+
+**Terminal session**
+
+```bash
 hacker@variables~printing-exported-variables:~$ export FLAG
 hacker@variables~printing-exported-variables:~$ env | grep '^FLAG='
 FLAG=pwn.college{UF-va328jDDhxEmv1XhgJFDc5sa.QX4UTN0wSNxIzNzEzW}
-hacker@variables~printing-exported-variables:~$
+```
 
-##What I Learned
-How to use env 
+**What I learned**
 
-##References
-pwn.college
+* Use `env` to list exported environment variables and `grep` to filter for a specific one.
 
-##Storing Command Output
-Teaches us about command substitution
+**References**
 
-**flag** pwn.college{EMAC2qVQZFFmIVRed0FB_ppML0j.QX1cDN1wSNxIzNzEzW}
+* pwn.college
 
-##My Solve
+---
+
+## Storing Command Output
+
+**Flag**
+
+```
+pwn.college{EMAC2qVQZFFmIVRed0FB_ppML0j.QX1cDN1wSNxIzNzEzW}
+```
+
+**Terminal session**
+
+```bash
 hacker@variables~storing-command-output:~$ PWN=$(/challenge/run)
-Congratulations! You have read the flag into the PWN variable. Now print it out 
-and submit it!
-hacker@variables~storing-command-output:~$ echo PWN
-PWN
+Congratulations! You have read the flag into the PWN variable. Now print it out and submit it!
 hacker@variables~storing-command-output:~$ printenv PWN
 pwn.college{EMAC2qVQZFFmIVRed0FB_ppML0j.QX1cDN1wSNxIzNzEzW}
-hacker@variables~storing-command-output:~$
+```
 
-##What I Learned
-how to print variables using command substitution
+**What I learned**
 
-##References
-pwn.college
+* Command substitution (`VAR=$(command)`) captures a command's output into a variable.
 
-##Reading Input
-Teaches us to print the input given by the user into the variable 
+**References**
 
-**flag** pwn.college{cfgrFC0Lh63cbBHr0FvH9QfcGEm.QX4cTN0wSNxIzNzEzW}
+* pwn.college
 
-##My Solve
+---
+
+## Reading Input
+
+**Flag**
+
+```
+pwn.college{cfgrFC0Lh63cbBHr0FvH9QfcGEm.QX4cTN0wSNxIzNzEzW}
+```
+
+**Terminal session**
+
+```bash
 hacker@variables~reading-input:~$ read -p "Enter value: " PWN
 Enter value: COLLEGE
 You've set the PWN variable properly! As promised, here is the flag:
 pwn.college{cfgrFC0Lh63cbBHr0FvH9QfcGEm.QX4cTN0wSNxIzNzEzW}
-hacker@variables~reading-input:~$ 
+```
 
-##What I Learned
-how to read an input
+**What I learned**
 
-##References
-pwn.college
+* Use `read` to get user input into a variable (e.g., `read -p "Prompt" VAR`).
 
-##Reading Files
-Teaches us to read files 
+**References**
 
-**flag** pwn.college{sjkTR7UwL5scNfxfB5_J_9uGSZR.QXwIDO0wSNxIzNzEzW}
+* pwn.college
 
-##My Solve
+---
+
+## Reading Files
+
+**Flag**
+
+```
+pwn.college{sjkTR7UwL5scNfxfB5_J_9uGSZR.QXwIDO0wSNxIzNzEzW}
+```
+
+**Terminal session**
+
+```bash
 hacker@variables~reading-files:~$ read -r PWN < /challenge/read_me
 You've set the PWN variable properly! As promised, here is the flag:
 pwn.college{sjkTR7UwL5scNfxfB5_J_9uGSZR.QXwIDO0wSNxIzNzEzW}
-hacker@variables~reading-files:~$
+```
 
-##What I Learned
-how to help the program to read the file
+**What I learned**
 
-##References
-pwn.college
+* Use input redirection (`read -r VAR < file`) to read the first line of a file into a variable.
+
+**References**
+
+* pwn.college
+
+---
+
+*Would you like this exported as a PDF or merged into the combined report with your other formatted modules?*
