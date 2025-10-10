@@ -1,91 +1,136 @@
 # Hello Hackers
-This module has threee challenges which are Intro to Commands, Intro to Arguments and Command History.
 
-#Intro to Commands
-This challenge asks to invoke the 'hello' command to get the flag.
-As the Linux commands are case sensitive, we should be carefull and run exactly the same way in the shell to get the flag.
-After getting the flag we need submit it in the flag section, after which the challenge is completed.
+This module has three challenges: **Intro to Commands**, **Intro to Arguments**, and **Command History**.
 
-## My solution
+---
+
+## Intro to Commands
+
+This challenge asks you to invoke the `hello` command to get the flag. Commands are case-sensitive, so run it exactly as shown.
+
+### My solution
+
 **Flag**
-''' pwn.college{omcFfiMWKQqz64gW2BhqCxGKbMG.QX3YjM1wSNxIzNzEzW} '''
 
-1. I click on the challenge and click on start and choose ssh near flag input area
-2. I connected the dojo host using SSH command.
-   '''bash
-   deepu18@Jarvis:~$ ssh -i ./key
-   hacker@dojo.pwn.college
-   Connected!
-3. Now the shell is connected to dojo. On typing 'hello' and pressing Enter, the flag is produced on pwn.college(https://pwn.college/linux-luminarium/hello/), which i can submit to complete the challenge
-   '''bash
-   hacker@hello-intro-to-commands:~$ hello
-   Success! Here is your flag:
-   pwn.college{omcFfiMWKQqz64gW2BhqCxGKbMG.QX3YjM1wSNxIzNzEzW}
+```
+pwn.college{omcFfiMWKQqz64gW2BhqCxGKbMG.QX3YjM1wSNxIzNzEzW}
+```
 
-## What i learned
-1. Basic structure of linux commands.
-   a. Every command in shell follows a structure
-   b. WE can run the coomands with Enter or return key depending on the users device.
-   c. When the command is entered, the shell invokes it, proccesses it and prints the output.
-   d. After getting the output the shell prompt reappears for next command.
+**Steps**
 
-2. Commands are case sensitive
+1. Click the challenge, click **Start**, then choose **SSH** near the flag input area.
+2. Connect to the dojo host using SSH:
 
+```bash
+ssh -i ./key hacker@dojo.pwn.college
+# Output (example):
+# Connected!
+```
 
-## References
-1. pwn.college
-2. youtube video available in the command line above the challenges(https://youtu.be/g_85EVO3IC0?si=3cVEwx8DqQN3KXSG)
+3. Once connected, run the command exactly as shown to print the flag:
 
-#Intro to Arguments
-this challenges asks us to run a command 'hello' like last challenge but this time to add and argument 'hackers' into it, without using echo.
-Therefore, the asked output is command+argument 'hello hackers'.
-Then the flag is printed and submitted, which completes the challenge.
+```bash
+hello
+# Output (example):
+# Success! Here is your flag:
+# pwn.college{omcFfiMWKQqz64gW2BhqCxGKbMG.QX3YjM1wSNxIzNzEzW}
+```
 
-#My solution
-flag: ''' pwn.college{cCb00PSBOyrit0tfuXT3MKFwXYW.QX4YjM1wSNxIzNzEzW} '''
+### What I learned
 
-1. I connected the dojonhost using ssh command
-   '''bash
-   deepu18@Jarvis:~/pwn.college.Deeptanshu
-   deepu18@Jarvis:~$ ssh -i ./key hacker@dojo.pwn.college
-   Connected!
+1. Basic structure of Linux commands:
 
-3. Now the shell is connected to the dojo.
-4. Now i need to type the command 'hello hackers'
-   '''bash
-   hacker@hello~intro-to-arguments:~$ hello hackers
-   Success! Here is your flag:
-   pwn.college{cCb00PSBOyrit0tfuXT3MKFwXYW.Qx4YjM1wSNxIzNzEzW}
-5. now the flag has been printed, which i can copy and submit to pwn.college to complete the challenge.
+   * Commands follow a simple structure: `command [options] [arguments]`.
+   * Press **Enter** to run a command.
+   * The shell executes the command and prints output, then returns to the prompt.
+2. Commands are case-sensitive.
 
-## References
-1. pwn.college
+**References**
 
+* pwn.college
+* The video linked in the challenge (YouTube)
 
+---
 
-# Command History
-1. In this challenge the flag is already injected int o command history.
-2. We have to open terminal, start the challenge and press the up arrow key to get our flag that was hidden in the command history.
-3. After getting our flag we need to submit it, hence, completing the challenge.
+## Intro to Arguments
 
-#My solution
-flag: ''' pwn.college{UhKf_685tPHwTuZfsCSV207adsj.0lNzEzNxwSNxIzEzW} '''
-1. Just like the previous challenges i had connected the dojo host using ssh command.
-   '''bash
-   deepu18@Jarvis:~$ ssh -i ./key
-   hacker@dojo.pwn.college
-   connected!
-2.Now the shell is connected to dojo.
-3.Now i need to press the up arrow key, so that the shell displayed the previous saved command that contained the flag
-   '''bash
-   hacker@hello~command-history:~& the flag is pwn.college{UhKf_685tPHwTuZfsCSV207adsj.01NzEzNxwSNxIzEzW}
-4. This given flag I had copied and submitted on pwn.college to complete the challenge.
+This challenge is like the previous one but requires passing an argument to `hello`. The desired output is `hello hackers` (without using `echo`). After printing that, the flag will appear.
 
- ## What have i Learned
- 1. The shell keeps a record of the commands.
- 2. History can be navigated
- 3. Time can be saved by avoiding repetitive typing
+### My solution
 
-##References
-1. pwn.college
-2. read about the history command through chatgpt
+**Flag**
+
+```
+pwn.college{cCb00PSBOyrit0tfuXT3MKFwXYW.QX4YjM1wSNxIzNzEzW}
+```
+
+**Steps**
+
+1. Connect to the dojo host via SSH:
+
+```bash
+ssh -i ./key hacker@dojo.pwn.college
+# Output: Connected!
+```
+
+2. Run `hello` with the argument `hackers`:
+
+```bash
+hello hackers
+# Output:
+# Success! Here is your flag:
+# pwn.college{cCb00PSBOyrit0tfuXT3MKFwXYW.QX4YjM1wSNxIzNzEzW}
+```
+
+**References**
+
+* pwn.college
+
+---
+
+## Command History
+
+In this challenge the flag is stored in the shell's command history. Press the **Up** arrow key to recall previous commands and reveal the hidden flag.
+
+### My solution
+
+**Flag**
+
+```
+pwn.college{UhKf_685tPHwTuZfsCSV207adsj.0lNzEzNxwSNxIzEzW}
+```
+
+**Steps**
+
+1. Connect to the dojo host via SSH:
+
+```bash
+ssh -i ./key hacker@dojo.pwn.college
+# Output: Connected!
+```
+
+2. Press the **Up** arrow key in the terminal to browse command history. The previous command containing the flag will appear. Example shown below (simulated):
+
+```bash
+# Press ↑ and the shell shows the previous command that contained the flag
+# Example display (simulated):
+# hacker@hello~command-history:~$ <previous-command-containing-flag>
+# pwn.college{UhKf_685tPHwTuZfsCSV207adsj.0lNzEzNxwSNxIzEzW}
+```
+
+### What I learned
+
+1. The shell keeps a record of commands (history).
+2. You can navigate history using arrow keys to avoid retyping.
+
+**References**
+
+* pwn.college
+* Documentation on the `history` command
+
+---
+
+*Notes:*
+
+* All terminal commands and outputs have been placed in fenced code blocks (`bash`) for clarity.
+* Replace `./key` and hostnames as appropriate for your environment.
