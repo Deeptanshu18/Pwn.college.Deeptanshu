@@ -1,105 +1,144 @@
-###Terminal Multiplexing
-This module teaches us how to open many terminals without using many windows
+# Terminal Multiplexing — Formatted Solutions
 
+This module demonstrates terminal multiplexers (`screen` and `tmux`). Each challenge below contains the **goal**, the **flag**, the **terminal session** (in a `bash` code block), a short **what I learned**, and **references**.
 
-##Launching Screen
-This teach teaches us how to use the program screen which creates terminals inside a terminal
+---
 
-#My Solve
-Flag: ''' pwn.college{YFNhpyJ956jToEsxz1_J0Jn2ikX.0VN4IDOxwSNxIzNzEzW} '''
+## Launching `screen`
 
-Code: 
-''' 
+**Goal:** Start a `screen` session and discover the flag shown inside it.
+
+**Flag**
+
+```
+pwn.college{YFNhpyJ956jToEsxz1_J0Jn2ikX.0VN4IDOxwSNxIzNzEzW}
+```
+
+**Terminal**
+
+```bash
 Congratulations! You're inside a screen session!
 Here's your flag:
 pwn.college{YFNhpyJ956jToEsxz1_J0Jn2ikX.0VN4IDOxwSNxIzNzEzW}
 hacker@terminal-multiplexing~launching-screen:~$
-'''
+```
 
-#What I Learned
-I learned how to use screen program and open a terminal in current terminal and retrieve my flag.
+**What I learned**
 
-#Note: We need to type exit or press control-D to leave the opened terminal.
+* `screen` creates virtual terminals inside a single real terminal. Use `exit` or `Ctrl-D` to leave a screen window.
 
-#Reference
-pwn.college
+**References**
 
-##Detaching and Attaching
-This challenge teaches us to how to switch between terminals and reattach them.
+* pwn.college
 
-#My Solve
-flag: ''' pwn.college{UFIzLS5hx88gfN4Wq1wLISdgEGu.0lN4IDOxwSNxIzNzEzW} '''
+---
 
-Code: 
-'''
+## Detaching and Attaching (screen)
+
+**Goal:** Detach a `screen` session and reattach to retrieve the flag.
+
+**Flag**
+
+```
+pwn.college{UFIzLS5hx88gfN4Wq1wLISdgEGu.0lN4IDOxwSNxIzNzEzW}
+```
+
+**Terminal**
+
+```bash
 hacker@terminal-multiplexing~detaching-and-attaching:~$ echo Yes! Flag is: pwn.college{UFIzLS5hx88gfN4Wq1wLISdgEGu.0lN4IDOxwSNxIzNzEzW}
 Yes! Flag is: pwn.college{UFIzLS5hx88gfN4Wq1wLISdgEGu.0lN4IDOxwSNxIzNzEzW}
-hacker@terminal-multiplexing~detaching-and-attaching:~$
-'''
+```
 
-#What I Learned
-How to open a terminal, press cntrl-A then d to exit it and reattach it with "screen -r" and retrieve the flag.
+**What I learned**
 
-#Refernce
-pwn.college
+* Detach with `Ctrl-A d` and reattach with `screen -r` to resume sessions.
 
-##Finding Sessions
-This challenge teaches us how to find available screens and which one are running
+**References**
 
-#My Solve
-flag: ''' pwn.college{Yg7kEyhRBMNn8Mc1SPVIReuhH-o.01N4IDOxwSNxIzNzEzW} '''
+* pwn.college
 
-Code: 
-'''
-hacker@terminal-multiplexing~finding-sessions:~$  echo 'Congratulations! You found the right session!'
-Congratulations! You found the right session!
-hacker@terminal-multiplexing~finding-sessions:~$  echo pwn.college{Yg7kEyhRBMNn8Mc1SPVIReuhH-o.01N4IDOxwSNxIzNzEzW}
+---
+
+## Finding Sessions (screen)
+
+**Goal:** Locate the correct `screen` session that contains the flag.
+
+**Flag**
+
+```
 pwn.college{Yg7kEyhRBMNn8Mc1SPVIReuhH-o.01N4IDOxwSNxIzNzEzW}
-'''
+```
 
-#What I Learned
-How to detach not available and attach available screens and retrieve the flag in them
+**Terminal**
 
-#Reference
-pwn.college
+```bash
+hacker@terminal-multiplexing~finding-sessions:~$ echo 'Congratulations! You found the right session!'
+Congratulations! You found the right session!
+hacker@terminal-multiplexing~finding-sessions:~$ echo pwn.college{Yg7kEyhRBMNn8Mc1SPVIReuhH-o.01N4IDOxwSNxIzNzEzW}
+pwn.college{Yg7kEyhRBMNn8Mc1SPVIReuhH-o.01N4IDOxwSNxIzNzEzW}
+```
 
-##Switching Windows
-This challenge teaches us how to use multiple windows as program screen is terminal-with-a-terminal
+**What I learned**
 
-#My Solve
-flag: ''' pwn.college{o30Mn4E9VFolWjAV3qkHCljJRzx.0FO4IDOxwSNxIzNzEzW} '''
+* Use `screen -ls` to list sessions and `screen -r <pid|name>` to attach to the right one.
 
-Code: 
-'''
-hacker@terminal-multiplexing~switching-windows:~$  cat <<MSG
+**References**
+
+* pwn.college
+
+---
+
+## Switching Windows (screen)
+
+**Goal:** Switch between windows inside `screen` and find the flag in a specific window.
+
+**Flag**
+
+```
+pwn.college{o30Mn4E9VFolWjAV3qkHCljJRzx.0FO4IDOxwSNxIzNzEzW}
+```
+
+**Terminal**
+
+```bash
+hacker@terminal-multiplexing~switching-windows:~$ cat <<MSG
 > Excellent work! You found window 0!
 > Here is your flag: pwn.college{o30Mn4E9VFolWjAV3qkHCljJRzx.0FO4IDOxwSNxIzNzEzW}
 > MSG
 Excellent work! You found window 0!
 Here is your flag: pwn.college{o30Mn4E9VFolWjAV3qkHCljJRzx.0FO4IDOxwSNxIzNzEzW}
-hacker@terminal-multiplexing~switching-windows:~$ 1
-'''
+```
 
-#What I Learned
-How to use multiple windows by using different functions of cntrl-A like,
-Ctrl-A c - Create a new window
-Ctrl-A n - Next window
-Ctrl-A p - Previous window
-Ctrl-A 0 through Ctrl-A 9 - Jump directly to window 0-9
-Ctrl-A " - bring up a selection menu of all of the windows
-and to attach everything
+**What I learned**
 
-#Refernce
-pwn.college
+* Useful `screen` shortcuts:
 
-##Detaching and Attaching(tmux)
-This challenge teaches us how to use tmux( terminal multiplexer ) insteaed of screen and cntrl-B instead of cntrl-A
+  * `Ctrl-A c` — create window
+  * `Ctrl-A n` — next window
+  * `Ctrl-A p` — previous window
+  * `Ctrl-A 0..9` — jump to numbered windows
+  * `Ctrl-A "` — window list
 
-#My Solve
-flag: ''' pwn.college{IFcvGggGFYigujtY4OPzACDcf_p.0VO4IDOxwSNxIzNzEzW} '''
+**References**
 
-Code: 
-'''
+* pwn.college
+
+---
+
+## Detaching and Attaching (`tmux`)
+
+**Goal:** Use `tmux` to create a session, let a program send a message to it, then reattach to see the flag.
+
+**Flag**
+
+```
+pwn.college{IFcvGggGFYigujtY4OPzACDcf_p.0VO4IDOxwSNxIzNzEzW}
+```
+
+**Terminal**
+
+```bash
 hacker@terminal-multiplexing~detaching-and-attaching-tmux:~$ tmux
 [detached (from session 0)]
 hacker@terminal-multiplexing~detaching-and-attaching-tmux:~$ /challenge/run
@@ -109,47 +148,58 @@ Sending flag to your tmux session...
 Flag sent! Now reattach to your tmux session with:
   tmux attach
 
-You'll find the flag waiting for you there!
 hacker@terminal-multiplexing~detaching-and-attaching-tmux:~$ tmux attach
-[detached (from session 0)]
-hacker@terminal-multiplexing~detaching-and-attaching-tmux:~$  echo Congratulations, here is your flag: pwn.college{IFcvGggGFYigujtY4OPzACDcf_p.0VO4IDOxwSNxIzNzEzW}
 Congratulations, here is your flag: pwn.college{IFcvGggGFYigujtY4OPzACDcf_p.0VO4IDOxwSNxIzNzEzW}
-'''
+```
 
-#What I Learned
-How to use tmux, list sessions ( tmux ls ), attaching ( tmux a )
+**What I learned**
 
-#Reference
-pwn.college
+* `tmux` is a modern terminal multiplexer. Create sessions with `tmux`, list with `tmux ls`, attach with `tmux attach` or `tmux a`.
 
-##Switching Windows( tmux )
-Teaches us how to switch windows using tmux 
+**References**
 
-#My Solve
-flag: ''' pwn.college{sbI1iGtkwdcBlKr6ACJ6TvzgYvQ.0FM5IDOxwSNxIzNzEzW} '''
+* pwn.college
 
-Code: 
-'''
-hacker@terminal-multiplexing~switching-windows-tmux:~$  cat <<MSG
+---
+
+## Switching Windows (tmux)
+
+**Goal:** Switch windows inside `tmux` to find the flag.
+
+**Flag**
+
+```
+pwn.college{sbI1iGtkwdcBlKr6ACJ6TvzgYvQ.0FM5IDOxwSNxIzNzEzW}
+```
+
+**Terminal**
+
+```bash
+hacker@terminal-multiplexing~switching-windows-tmux:~$ cat <<MSG
 > Excellent work! You found window 0!
 > Here is your flag: pwn.college{sbI1iGtkwdcBlKr6ACJ6TvzgYvQ.0FM5IDOxwSNxIzNzEzW}
 > MSG
 Excellent work! You found window 0!
 Here is your flag: pwn.college{sbI1iGtkwdcBlKr6ACJ6TvzgYvQ.0FM5IDOxwSNxIzNzEzW}
-hacker@terminal-multiplexing~switching-windows-tmux:~$
-'''
+```
 
-#What I Learned
-How to swtich windows using tmux program and cntrl-B and its different functions
-Ctrl-B c - Create a new window
-Ctrl-B n - Next window
-Ctrl-B p - Previous window
-Ctrl-B 0 through Ctrl-B 9 - Jump to window 0-9
-Ctrl-B w - See a nice window picker
-I also learned that tmux shows our windows at the bottom in a status bar like,
-[0] 0:bash* 1:bash
-"*" shows us our current window
+**What I learned**
 
-#Reference
-pwn.college
-chatgpt( to understand how to switch windows )
+* Useful `tmux` shortcuts:
+
+  * `Ctrl-B c` — create window
+  * `Ctrl-B n` — next window
+  * `Ctrl-B p` — previous window
+  * `Ctrl-B 0..9` — jump to windows
+  * `Ctrl-B w` — window picker
+* `tmux` shows windows in a status bar and marks the active one with `*`.
+
+**References**
+
+* pwn.college
+* ChatGPT (for clarifying `tmux` shortcuts)
+
+---
+
+*Would you like this exported as a PDF or merged into your master study guide?*
+
