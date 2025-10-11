@@ -84,10 +84,3 @@ pwn.college{8Y30v7hyCEQuafbIkFvac9rVaF6.QX1QTN0wSNxIzNzEzW}
 
 ---
 
-If you'd like, I can:
-
-* finish the rest of the module for you (format the other 6 challenges) using your previous submissions,
-* merge this with your other formatted modules into a single document, or
-* export this to a PDF.
-
-Which would you prefer?
