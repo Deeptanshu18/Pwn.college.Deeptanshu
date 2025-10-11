@@ -80,7 +80,5 @@ pwn.college{8Y30v7hyCEQuafbIkFvac9rVaF6.QX1QTN0wSNxIzNzEzW}
 
 ## Position Thyself
 
-*This section was left for you to continue — add your steps, flag, terminal output, and notes and I will format them the same way.*
-
 ---
 
