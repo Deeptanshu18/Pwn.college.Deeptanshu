@@ -408,4 +408,4 @@ hacker@piping~named-pipes:~$ /challenge/run > /tmp/flag_fifo
 
 ---
 
-*Would you like this exported as a PDF or merged into your master study guide?*
+
