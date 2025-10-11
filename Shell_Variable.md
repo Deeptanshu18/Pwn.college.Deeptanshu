@@ -219,4 +219,3 @@ pwn.college{sjkTR7UwL5scNfxfB5_J_9uGSZR.QXwIDO0wSNxIzNzEzW}
 
 ---
 
-*Would you like this exported as a PDF or merged into the combined report with your other formatted modules?*
