@@ -157,4 +157,3 @@ pwn.college{oUarL6F1ED5xZXqscCu-l3Tyehb.0FM0MDOxwSNxIzNzEzW}
 
 ---
 
-*Would you like this exported as a PDF or combined with the other formatted modules?*
