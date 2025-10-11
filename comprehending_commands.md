@@ -411,5 +411,3 @@ pwn.college{k6SE6N6wjxu8ECKHFRP-kXNMSdS.QXyMDO0wSN0EzNzEzW}
 * pwn.college
 
 ---
-
-*Want this exported as a PDF or merged into your master study guide?*
