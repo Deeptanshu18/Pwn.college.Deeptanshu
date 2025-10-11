@@ -201,5 +201,4 @@ Here is your flag: pwn.college{sbI1iGtkwdcBlKr6ACJ6TvzgYvQ.0FM5IDOxwSNxIzNzEzW}
 
 ---
 
-*Would you like this exported as a PDF or merged into your master study guide?*
 
