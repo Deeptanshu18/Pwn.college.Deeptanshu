@@ -203,4 +203,3 @@ pwn.college{0HHG-gs6tHkx1GO_WF6LM-EkqnK.QX3cjM1wSNxIzNzEzW}
 
 ---
 
-*Would you like this exported as a PDF or further condensed into a one-page summary?*
