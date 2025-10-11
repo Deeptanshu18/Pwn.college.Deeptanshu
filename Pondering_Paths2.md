@@ -205,5 +205,4 @@ Ran `/challenge/run ~/a` to instruct the program to write the flag to `/home/hac
 
 ---
 
-*Would you like this exported to PDF or merged into one combined report with your other formatted modules?*
 
